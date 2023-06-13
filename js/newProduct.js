@@ -13,7 +13,7 @@ function guardar() {
         stock: s,
         imagen: i
     }
-    let url='https://correa7.github.io/api-sport-products/product-store.json'
+    let url='https://my-json-server.typicode.com/Correa7/Api/data'
     var options = {
         body: JSON.stringify(producto),
         method: 'POST',
@@ -24,7 +24,6 @@ function guardar() {
             
             alert("Grabado")
             window.location.href = "../index.html";  
-            // Handle response we get from the API
         })
         .catch(err => {
             //this.errored = true

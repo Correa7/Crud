@@ -1,5 +1,5 @@
 const { createApp } = Vue 
-// let url = '../data.json'
+
 let url='https://my-json-server.typicode.com/Correa7/Api/data'
 createApp({
     data(){
@@ -23,14 +23,23 @@ createApp({
             .catch(err=>console.log(err))
         },
         eliminar(id) {
-            // this.products = this.products.filter(p=> p.id !== id)
-            
+
+            Toastify({
+                text: "Producto eliminado",
+                style: {
+                    background: "linear-gradient(to right,  #e92424,  #da5353)",
+                },
+                duration: 2000,
+                gravity: "bottom",
+                position: "right",
+            }).showToast();
+
             const url = 'https://my-json-server.typicode.com/Correa7/Api/data/' + id;
             var options = {
                 method: 'DELETE',
             }
             fetch(url, options)
-                .then(res => res.json()) // or res.json()
+                .then(res => res.json()) 
                 .then(res => {
                     location.reload();
                 })
