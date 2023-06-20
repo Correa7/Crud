@@ -46,6 +46,7 @@ function modificar() {
            
             alert("Registro modificado")
             window.location.href ="https://correa7.github.io/Crud/"; 
+            
             // window.location.href = "../index.html";  
         })
         .catch(err => {
