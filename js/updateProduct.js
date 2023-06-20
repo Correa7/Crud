@@ -10,9 +10,10 @@ for (let i = 0; i < args.length; ++i) {
 //decodeUriComponent elimina los caracteres especiales que recibe en la URL 
 document.getElementById("id").value = decodeURIComponent(parts[0][1])
 document.getElementById("nombre").value = decodeURIComponent(parts[1][1])
-document.getElementById("precio").value = decodeURIComponent(parts[2][1])
-document.getElementById("stock").value =decodeURIComponent( parts[3][1])
-document.getElementById("imagen").value =decodeURIComponent( parts[4][1])
+document.getElementById("categoria").value = decodeURIComponent(parts[2][1])
+document.getElementById("precio").value = decodeURIComponent(parts[3][1])
+document.getElementById("stock").value =decodeURIComponent( parts[4][1])
+document.getElementById("imagen").value =decodeURIComponent( parts[5][1])
 
 
 
@@ -20,18 +21,20 @@ function modificar() {
 
     let id = document.getElementById("id").value
     let n = document.getElementById("nombre").value
+    let c = document.getElementById("categoria").value
     let p = parseFloat(document.getElementById("precio").value)
     let s = parseInt(document.getElementById("stock").value)
     let i = document.getElementById("imagen").value
    
     let producto = {
         nombre: n,
+        categoria: c,
         precio: p,
         stock: s,
-        imagen:i
+        img:i
     }
-    let dir=''
-    let url =dir+id
+    
+    const url = 'https://haguen77.pythonanywhere.com/productos/' + id;
     var options = {
         body: JSON.stringify(producto),
         method: 'PUT',

@@ -1,19 +1,20 @@
 function guardar() {
-    let r = document.getElementById("id").value
+ 
     let n = document.getElementById("nombre").value
+    let c = document.getElementById("categoria").value
     let p = parseFloat(document.getElementById("precio").value)
     let s = parseInt(document.getElementById("stock").value)
     let i = document.getElementById("imagen").value
 
 
     let producto = {
-        id:r,
         nombre: n,
+        categoria: c,
         precio: p,
         stock: s,
-        imagen: i
+        img: i
     }
-    let url='https://my-json-server.typicode.com/Correa7/Api/data'
+    let url='https://haguen77.pythonanywhere.com/productos'
     var options = {
         body: JSON.stringify(producto),
         method: 'POST',
@@ -24,6 +25,7 @@ function guardar() {
             
             alert("Grabado")
             window.location.href = "../index.html";  
+            // Handle response we get from the API
         })
         .catch(err => {
             //this.errored = true

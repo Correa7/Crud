@@ -1,6 +1,6 @@
 const { createApp } = Vue 
 
-let url='https://my-json-server.typicode.com/Correa7/Api/data'
+let url='https://haguen77.pythonanywhere.com/productos'
 createApp({
     data(){
         return{
@@ -23,23 +23,14 @@ createApp({
             .catch(err=>console.log(err))
         },
         eliminar(id) {
-
-            Toastify({
-                text: "Producto eliminado",
-                style: {
-                    background: "linear-gradient(to right,  #e92424,  #da5353)",
-                },
-                duration: 2000,
-                gravity: "bottom",
-                position: "right",
-            }).showToast();
-
-            const url = 'https://my-json-server.typicode.com/Correa7/Api/data/' + id;
+            // this.products = this.products.filter(p=> p.id !== id)
+            
+            const url = 'https://haguen77.pythonanywhere.com/productos/' + id;
             var options = {
                 method: 'DELETE',
             }
             fetch(url, options)
-                .then(res => res.json()) 
+                .then(res => res.json()) // or res.json()
                 .then(res => {
                     location.reload();
                 })
