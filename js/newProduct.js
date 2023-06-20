@@ -24,7 +24,8 @@ function guardar() {
         .then(function () {
             
             alert("Grabado")
-            window.location.href ="Crud/index.html";  
+            window.location.href ="index.html"; 
+            // window.location.href ="../index.html";   
             // Handle response we get from the API
         })
         .catch(err => {
