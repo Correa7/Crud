@@ -24,8 +24,8 @@ function guardar() {
         .then(function () {
             
             alert("Grabado")
-            // window.location.href =""; 
-            window.location.href ="../index.html";   
+            window.location.href ="https://correa7.github.io/Crud/"; 
+            // window.location.href ="../index.html";   
             // Handle response we get from the API
         })
         .catch(err => {
