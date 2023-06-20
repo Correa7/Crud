@@ -90,7 +90,7 @@ h6 {
 .contenedor {
 	margin-top: 30px;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	grid-column-gap: 10px;
 	grid-row-gap: 150px;
 }
@@ -110,13 +110,6 @@ h6 {
 
 /*               Break points                */
 @media screen and (max-width: 1288px) {
-	.contenedor {
-		margin-top: 30px;
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-column-gap: 10px;
-		grid-row-gap: 150px;
-	}
 
 	.thumbnail {
 		width: 100%;
@@ -144,6 +137,10 @@ h6 {
 }
 
 @media screen and (max-width: 376px) {
+	.nav-title{
+		margin-left: 30px;
+		font-size: 20px;
+	}
 	.form{
 		width: 300px;
 		
